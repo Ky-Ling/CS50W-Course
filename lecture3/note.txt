@@ -1,0 +1,49 @@
+1: manage.py:
+    We are going to use this file to be able to use the commands on this Django project
+2: settings.py:
+    which contains important configuration settings for our Django application. 
+    It comes preloaded with a couple of default settings, but we might wanna change those settings to be able
+    to add features to our application as well or make some modifications to how the application behaves
+3: urls.py: 
+    It is just going to be a table of contents of all of the URLs on my web application that I can ultimately
+    visit.
+
+
+Commands: 
+    (1): pip3 install Django
+    (2): django-admin startproject projectname 
+    (3): python manage.py runserver 
+    (4): python manage.py startapp hello
+        --> Create another application inside of the big app called lecture3
+    (5): python manage.py migrate
+        --> Migrate all the data into a database, it will allow us to create all of the default tables 
+                inside of the Django's database
+
+
+4: The steps for creating a new application:
+    (1): On the command line: python manage.py startapp newyear
+    (2): In the lecture3 folder, go to settings.py, add a new installed app: 'newyear'
+    (3): Go to urls.py, add a new path
+    (4): In the newyear folder, create a new file called urls.py, and then add urlpatterns.
+    (5): In the newyear folder, go to views.py, create new views
+    (6): In the newyear folder, create a now folder called templates, inside this folder, create
+        a folder called newyear, and inside of it, we can create several files
+    (7): In the newyear folder, create a new folder called static, inside this folder, create a new folder called newyear,
+        and inside of it, we can create several static files
+    
+
+5: Status Code
+    200   OK
+    301   Removed permanently
+    403   Forbidden
+    404   Not Found
+    500   Internal Server Error
+
+6: HttpResponse:
+    A very simple response that includes a response code of 200 and a string of text that can be displayed in a web browser
+
+7: Django requires a token to prevent Cross-Site Request Forgery (CSRF) Attack. This is an attack where a malicious user 
+    attempts to send a request to your server from somewhere other than your site.
+    This could be a really big problem for some websites
+
+8: Sessions are a way to store unique data on the server side for each new visit to a website.

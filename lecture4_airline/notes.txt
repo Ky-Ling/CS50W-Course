@@ -1,0 +1,60 @@
+1: Tell Django that you should update the database to include the information about the models that i have
+    just created.
+    --> python manage.py makemigrations
+
+2: Apply the migration to the Django database
+    --> python manage.py migrate
+
+3: Manipulate the data of the database:
+    --> python manage.py shell
+
+4: On the shell:
+    from flights.models import Flights
+    f = Flight(origin="New York", destination="London", duration="435")
+    f.save()
+
+    Flight.objects.all()
+
+    After we define the function of __str__:
+    flights = Flight.objects.all()
+    flights
+        --> New we can see the string representation defined before
+
+    flight = flights.first()
+    flight
+    flight.in
+    flight.origin
+    flight.destination
+    flight.duration
+
+    Delete the flight:
+    flight.delete()
+
+
+5: After we make changes of our models:
+    (1): python manage.py makemigrations
+        --> Look for any changes that have been made to models.py and go ahead and create a migration 
+            instruction for how to make those changes to our database 
+    (2): python manage.py migrate
+
+    (3): Back to shell
+        from flights.models import *
+        jfk = Airport(code="JFK", city="New York")
+        jfk.save()
+        lhr = Airport(code="LHR", city="London")
+        lhr.save()
+        cbd = Airport(code="CDG", city="Paris")
+        cbd.save()
+        nrt = Airport(code="NRT", city="Tokyo")
+        nrt.save()
+        
+        f = Flight(origin=jfk, destination=lhr, duration=123)
+        f.save()
+
+        f
+        f.origin
+        f.origin.city
+        f.origin.code
+        lhr.arrivals.all()
+        
+            

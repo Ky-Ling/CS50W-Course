@@ -58,3 +58,11 @@
         lhr.arrivals.all()
         
             
+
+6: 
+    (1): python manage.py createsuperuser
+        --> Create the super user
+    (2): go to admin.py to register the models we created
+
+7: Create a new app
+    python manage.py startapp users
